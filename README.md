@@ -4,6 +4,7 @@ Run macOS on top of Docker with near-native performance with ease
 ![Alt text](/screenshots/xcode.png?raw=true "Xcode")
 
 ## Requirements
+- KVM
 - Docker
 - docker-compose or Docker compose plugin
 - X11
