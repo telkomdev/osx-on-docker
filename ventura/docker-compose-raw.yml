@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  osx_ventura:
+    image: sickcodes/docker-osx:ventura
+    container_name: osx_ventura
+    devices:
+      - "/dev/kvm:/dev/kvm"
+    ports:
+      - "50922:10022"
+    networks:
+      - dockerosxnet
+    environment:
+      GENERATE_UNIQUE: "true"
+      DISPLAY: "${DISPLAY:-:0.0}"
+      MASTER_PLIST_URL: "https://raw.githubusercontent.com/sickcodes/osx-serial-generator/master/config-custom.plist"
+      EXTRA: "-virtfs local,path=/mnt/hostshare,mount_tag=hostshare,security_model=passthrough,id=hostshare"
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+      - "${PWD}/mac_hdd_ng.img:/home/arch/OSX-KVM/mac_hdd_ng.img"
+      - "${PWD}/hostshare:/mnt/hostshare"
+
+networks:
+  dockerosxnet:
