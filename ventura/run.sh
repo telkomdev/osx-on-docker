@@ -8,7 +8,11 @@ download_qcow_image() {
 
 check_qcow_image() {
   if [ ! -f "mac_hdd_ng.img" ]; then
-    echo "macOS Ventura image does not exist"
+    echo "macOS Ventura base image does not exist"
+    exit 1
+  fi
+  if ! file mac_hdd_ng.img  | grep -q QEMU; then
+    echo "macOS Ventura base image is invalid"
     exit 1
   fi
 }
