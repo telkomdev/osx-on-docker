@@ -31,6 +31,13 @@ $ export variant="ventura" \
 - username: admin
 - password: letmein
 
+## Mounting `hostshare` volume
+- On your macOS
+```shell
+$ sudo -S mount_9p hostshare
+```
+- `hostshare` will be mounted on `/Volume/hostshare` in macOS
+
 ## Common Issues
 ### Error "gtk initialization failed"
 - Arch Linux
