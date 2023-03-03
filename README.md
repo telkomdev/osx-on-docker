@@ -17,7 +17,7 @@ Run macOS on top of Docker with near-native performance with ease
 ## How to use it?
 - Clone this repository
 ```shell
-$ git clone https://github.com/lutfailham96/osx-on-docker
+$ git clone https://github.com/telkomdev/osx-on-docker
 ```
 - Choose macOS variant, ex: ventura
 ```shell
