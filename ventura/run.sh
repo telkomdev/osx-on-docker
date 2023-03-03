@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
+qcow_image_url="https://telkomind-my.sharepoint.com/:u:/g/personal/dpe_dbt104_telkom_co_id/Eevymb06K9BPt1F0QjSvbLwBhYwctHwJBlz-lGlXudlmOw?download=1"
+
 download_qcow_image() {
   if [ ! -f "mac_hdd_ng.img" ]; then
-    wget -q -O mac_hdd_ng.img
+    echo "Downloading macOS Ventura base image ..."
+    wget -O mac_hdd_ng.img "${qcow_image_url}"
   fi
 }
 
@@ -19,7 +22,7 @@ check_qcow_image() {
 
 run_docker() {
   echo "Running docker container ..."
-  if docker-compose >/dev/null; then
+  if docker-compose > /dev/null 2>&1; then
     docker-compose up
   else
     docker compose up
