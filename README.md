@@ -28,3 +28,20 @@ $ export variant="ventura" \
 ## Default username & password
 - username: admin
 - password: letmein
+
+## Common Issues
+### Error "gtk initialization failed"
+- Arch Linux
+``` shell
+$ sudo pacman -S xorg-xhost
+```
+- Debian, Ubuntu, Linux Mint
+```shell
+$ sudo apt update \
+    && sudo apt install -y x11-xserver-utils \
+    && xhost +
+```
+- RHEL, Centos, Fedora
+```shell
+$ sudo yum install xorg-x11-server-utils
+```
