@@ -48,5 +48,6 @@ $ sudo apt update \
 $ sudo yum install xorg-x11-server-utils
 ```
 
-## Credits
+## Links & Resources
 - DockerOSX: https://github.com/sickcodes/Docker-OSX
+- Installing Xcode: https://github.com/RobotsAndPencils/xcodes
